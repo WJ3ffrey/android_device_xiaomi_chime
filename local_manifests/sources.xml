@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+<remote name="microG" fetch="https://github.com/lineageos4microg/" />
+<remote name="chimedev" fetch="https://github.com/chimedev/" />
+
+<project path="vendor/partner_gms" name=" android_vendor_partner_gms" groups="device" remote="microG" revision="master" />
+<project path="kernel/xiaomi/chime" name="kernel_xiaomi_chime" groups="device" remote="chimedev" revision="twelve" />
+
+</manifest>
