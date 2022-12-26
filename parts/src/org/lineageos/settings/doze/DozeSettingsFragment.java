@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2015 The CyanogenMod Project
- *               2017-2019 The LineageOS Project
+ *               2017-2019,2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,6 @@ import android.os.Handler;
 import android.widget.Switch;
 
 import androidx.preference.Preference;
-import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.SwitchPreference;
@@ -39,8 +38,8 @@ import com.android.settingslib.widget.OnMainSwitchChangeListener;
 
 import org.lineageos.settings.R;
 
-public class DozeSettingsFragment extends PreferenceFragment implements OnPreferenceChangeListener,
-        OnMainSwitchChangeListener {
+public class DozeSettingsFragment extends PreferenceFragment implements
+        Preference.OnPreferenceChangeListener, OnMainSwitchChangeListener {
 
     private MainSwitchPreference mSwitchBar;
 
@@ -133,7 +132,7 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         mPocketPreference.setEnabled(isChecked);
     }
 
-    public static class HelpDialogFragment extends DialogFragment {
+    private static class HelpDialogFragment extends DialogFragment {
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             return new AlertDialog.Builder(getActivity())
